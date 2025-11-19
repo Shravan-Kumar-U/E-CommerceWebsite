@@ -21,9 +21,9 @@ const cartSchema = new mongoose.Schema({
     },
     // Store price at time of adding to cart (for display purposes)
     price: {
-      type: Number,
-      required: true
-    }
+  type: Number,
+  required: [true, 'Price is required when adding product to cart']
+}
   }],
   updatedAt: {
     type: Date,
@@ -34,7 +34,7 @@ const cartSchema = new mongoose.Schema({
 });
 
 // Index for fast user cart lookup
-cartSchema.index({ user: 1 });
+//cartSchema.index({ user: 1 });
 
 // Pre-save middleware: Update timestamp
 cartSchema.pre('save', function(next) {

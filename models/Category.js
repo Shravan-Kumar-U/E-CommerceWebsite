@@ -28,7 +28,7 @@ const categorySchema = new mongoose.Schema({
 });
 
 // Index for faster slug lookups
-categorySchema.index({ slug: 1 });
+//categorySchema.index({ slug: 1 });
 
 // Pre-save middleware: Auto-generate slug from name
 categorySchema.pre('save', function(next) {

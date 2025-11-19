@@ -82,8 +82,8 @@ const userSchema = new mongoose.Schema({
 });
 
 // Indexes for performance
-userSchema.index({ email: 1 }); // Unique index on email
-userSchema.index({ googleAuthId: 1 }, { sparse: true }); // Sparse index for Google OAuth
+//userSchema.index({ email: 1 }); // Unique index on email
+//userSchema.index({ googleAuthId: 1 }, { sparse: true }); // Sparse index for Google OAuth
 
 // Pre-save middleware: Hash password before saving
 userSchema.pre('save', async function(next) {
